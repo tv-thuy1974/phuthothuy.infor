@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Giá Vàng | PHÚ THỌ THUỶ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #fff8e1;
+        color: #333;
+        text-align: center;
+        padding: 0px;
+      }
+
+      h1 {
+        color: #d4af37;
+        font-size: 40px;
+        margin-bottom: -10px;
+      }
+
+      h2 {
+        color: #d4af37;
+        font-size: 30px;
+        margin-bottom: 19px;
+      }
+
+      .update-time {
+        margin-bottom: 20px;
+        color: #555;
+        font-size: 16px;
+      }
+
+      table {
+        margin: 0 auto;
+        border-collapse: collapse;
+        width: 100%;
+        max-width: 900px;
+      }
+
+      th,
+      td {
+        border: 2px solid #d4af37;
+        padding: 15px;
+      }
+
+      th {
+        background-color: #fff3cd;
+        color: #333;
+        font-size: 20px;
+      }
+
+      td {
+        background-color: #fff;
+        font-size: 18px;
+      }
+
+      /* Tăng kích thước số giá vàng */
+      td.price {
+        font-size: 22px;
+        font-weight: bold;
+        color: #000;
+      }
+
+      footer {
+        margin-top: 15px;
+        color: #777;
+        font-size: 16px;
+        line-height: 1.2;
+      }
+
+      footer p {
+        margin: 2px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Tiệm Vàng PHÚ THỌ THUỶ</h1>
+    <h2>BẢNG GIÁ VÀNG</h2>
+    <div class="update-time" id="updateTime"></div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Loại vàng</th>
+          <th>Giá mua vào (VNĐ/chỉ)</th>
+          <th>Giá bán ra (VNĐ/chỉ)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Vàng 99.99</td>
+          <td class="price">11.750.000</td>
+          <td class="price">12.000.000</td>
+        </tr>
+        <tr>
+          <td>Vàng 690</td>
+          <td class="price">7.650.000</td>
+          <td class="price">8.250.000</td>
+        </tr>
+        <tr>
+          <td>Vàng 610</td>
+          <td class="price">6.700.000</td>
+          <td class="price">7.300.000</td>
+        </tr>
+        <tr>
+          <td>Vàng 600</td>
+          <td class="price">6.600.000</td>
+          <td class="price">7.200.000</td>
+        </tr>
+        <tr>
+          <td>Vàng 590</td>
+          <td class="price">6.500.000</td>
+          <td class="price">7.100.000</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <footer>
+      <p>© 2025 Tiệm Vàng PHÚ THỌ THUỶ</p>
+      <p>Địa chỉ: Ấp Hoà Bình 3, Hòa Lạc, Phú Tân, An Giang</p>
+      <p>Số Điện Thoại: 02963 811 115</p>
+    </footer>
+
+    <script>
+      function updateTime() {
+        const now = new Date();
+
+        // Lấy giờ, phút, giây
+        const hours = String(now.getHours()).padStart(2, "0");
+        const minutes = String(now.getMinutes()).padStart(2, "0");
+        const seconds = String(now.getSeconds()).padStart(2, "0");
+
+        // Lấy ngày, tháng, năm
+        const day = String(now.getDate()).padStart(2, "0");
+        const month = String(now.getMonth() + 1).padStart(2, "0"); // Tháng bắt đầu từ 0
+        const year = now.getFullYear();
+
+        // Chuỗi hiển thị theo yêu cầu
+        const formattedTime = `Cập nhật vào lúc ${hours}:${minutes}:${seconds} ngày ${day} tháng ${month} năm ${year}`;
+
+        // Gắn vào HTML
+        document.getElementById("updateTime").innerText = formattedTime;
+      }
+
+      // Gọi khi tải trang
+      updateTime();
+    </script>
+  </body>
+</html>
